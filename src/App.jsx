@@ -21,8 +21,9 @@ setCoords(latlon)
     <div className="App">
     
     <CardMeteo  lon={coords?.lon} lat={coords?.lat} />
-   
+   <img className='img' src='./img/clima1.jpg' alt="" />
     </div>
+
   )
 }
 

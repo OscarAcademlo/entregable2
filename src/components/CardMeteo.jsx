@@ -14,6 +14,7 @@ const CardMeteo = ({ lat, lon,setIsLoading }) => {
       axios.get(URL)
                .then(res => { 
         setWeather(res.data)
+        
         setisLoading(false)
                 const temp = {
           celsius:`${Math.round(res.data.main.temp -273.15)} °C`,
@@ -21,11 +22,13 @@ const CardMeteo = ({ lat, lon,setIsLoading }) => {
                   }
                   setTemperature(temp)
     })
+    
     .catch((err) => console.log(err))
   }
   }, [lat, lon])
+  console.log(weather);
   const handelClic = () => setIsCelsius(!isCelsius)
- 
+  
   if(isLoading){
     return <Loading/>
   }else{
